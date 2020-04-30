@@ -55,7 +55,7 @@ Hierarchy:
                         Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
                         Scale: {X: 1.0, Y: 1.0, Z: 1.0}
                         Children: {}
-                    f563e04d9098ee6c524e98eefe2aff32: !OffscreenRenderer.OffscreenScenesystem,OffscreenRenderer
+                    7df15e90cf82c05ec0143b5ca1f5c9b6: !OffscreenRenderer.OffscreenScenesystem,OffscreenRenderer
                         Id: 470f360b-4ac2-42c1-8761-0ff21fad78f5
         -   Entity:
                 Id: 632de489-4927-46a7-870b-322230bf3ccf
@@ -72,7 +72,7 @@ Hierarchy:
                         Name: null
                         Projection: Perspective
                         Slot: 61863a56-6569-437d-b2b0-82223e44596e
-                    e11b13eadc7cb5048bcca9d249f1d6df: !OffscreenRenderer.BasicCameraController,OffscreenRenderer
+                    c09a100502d5a73122d6600b94507493: !OffscreenRenderer.BasicCameraController,OffscreenRenderer
                         Id: 3931d4dd-df7c-476f-8666-4fe5d797a19e
                         Gamepad: false
                         KeyboardMovementSpeed: {X: 5.0, Y: 5.0, Z: 5.0}

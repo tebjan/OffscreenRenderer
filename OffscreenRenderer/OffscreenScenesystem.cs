@@ -38,7 +38,7 @@ namespace OffscreenRenderer
 
             // add Camera
             var camEntity = new Entity();
-            var camComponent = new CameraComponent();
+            var camComponent = new CameraComponent() { Slot = new SceneCameraSlotId(Guid.NewGuid()), Enabled = true };
             camEntity.Add(camComponent);
             scene.Entities.Add(camEntity);
 
@@ -48,7 +48,7 @@ namespace OffscreenRenderer
             camEntity.Transform.Rotation = Quaternion.RotationZ(angle);
 
             //Assign camera to CameraSlot
-            camComponent.Slot = sceneSystem.GraphicsCompositor.Cameras.FirstOrDefault().ToSlotId();
+            sceneSystem.GraphicsCompositor.Cameras[0].Id = camComponent.Slot.Id;
 
             // add scenesystem to Game, so it gets called
             Game.GameSystems.Add(sceneSystem);
