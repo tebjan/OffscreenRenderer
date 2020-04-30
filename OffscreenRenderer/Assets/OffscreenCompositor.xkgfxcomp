@@ -165,6 +165,7 @@ Game: !Xenko.Rendering.Compositing.SceneCameraRenderer,Xenko.Engine
     Camera: ref!! cea77efb-6c55-4170-8f23-9cc3b9bc933c
     Child*: !Xenko.Rendering.Compositing.RenderTextureSceneRenderer,Xenko.Rendering
         Id: 499cbde8-b3c5-4a55-bd21-5757494d82a0
+        Enabled*: true
         RenderTexture: 5efde3d9-cbcf-4f0d-a938-932aa085b2a7:RenderTexture
         Child: !Xenko.Rendering.Compositing.ForwardRenderer,Xenko.Engine ref!! 48fa7bfc-bccd-4fa1-974a-af7394b862fb
     RenderMask: All

@@ -17,88 +17,29 @@ namespace OffscreenRenderer
 {
     public class OffscreenScenesystem : SyncScript
     {
+        Entity dirlight;
+        
         public override void Start()
         {
+            // load a scene
             var scene = Content.Load<Scene>("OffscreenScene");
 
-            //AddSceneContent(scene);
+            // get the directional light for animation
             dirlight = scene.Entities.FirstOrDefault(e => e.Name == "Directional light");
+            
+            // OffscreenCompositor
+            var offscreenCompositor = Content.Load<GraphicsCompositor>("OffscreenCompositor");
 
-            // Create SCenesystem
+            // Create independent SceneSystem
             var sceneSystem = new SceneSystem(Services)
             {
+                Name = "OffscreeSceneSystem",
+                GraphicsCompositor = offscreenCompositor,
                 SceneInstance = new SceneInstance(Services, scene)
             };
-            sceneSystem.Name = "OffscreeScenesystem";
 
-            // OffscreenCompositor
-            var offscreencompositor = Content.Load<GraphicsCompositor>("OffscreenCompositor");
-            offscreencompositor.Name = "OffscreenCompositor";
-
-            sceneSystem.GraphicsCompositor = offscreencompositor;
-
-            // add scenesystem to Game, so it gets called
+            // add scene system to Game, so it gets called
             Game.GameSystems.Add(sceneSystem);
-        }
-
-        private Entity dirlight;
-
-        private void AddSceneContent(Scene scene)
-        {
-            // Capsule
-            var capsule = new Entity();
-            var modelComponent = capsule.GetOrCreate<ModelComponent>();
-            modelComponent.Model = Content.Load<Model>("Capsule");
-
-            // Ambient Light
-            var amblight = new Entity();
-
-            var lightCol = new Color3(1.0f, 0.0f, 0.0f);
-
-            var lc = new LightComponent
-            {
-                Type = new LightAmbient { Color = new ColorRgbProvider(lightCol) },
-                Intensity = 0.2f
-            };
-            amblight.Add(lc);
-
-            // Directional Light
-            dirlight = new Entity();
-
-            var dlc = new LightComponent
-            {
-                Type = new LightDirectional { Color = new ColorRgbProvider(new Color3(09.7f))},
-                Intensity = 0.01f
-            };
-            dirlight.Add(dlc);
-
-            // Sky Light 
-            var skylight = new Entity();
-            var skybox = Content.Load<Skybox>("Skybox");
-            var slc = new LightComponent
-            {
-                Type = new LightSkybox { Skybox = skybox},
-                Intensity = 0.02f
-            };
-
-            // Background
-            ////var bgTexture = Content.Load<Texture>("Skybox texture");
-            ////var bgc = new BackgroundComponent
-            ////{
-            ////    Texture = bgTexture,
-            ////    Intensity = 1.0f
-            ////};
-            //skylight.Add(bgc);
-
-
-            skylight.Add(slc);
-
-
-            // add Entities to Scene
-            scene.Entities.Add(capsule);
-            scene.Entities.Add(amblight);
-            scene.Entities.Add(dirlight);
-            scene.Entities.Add(skylight);
         }
 
         public override void Update()
