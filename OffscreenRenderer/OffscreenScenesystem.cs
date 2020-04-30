@@ -19,9 +19,10 @@ namespace OffscreenRenderer
     {
         public override void Start()
         {
-            var scene = new Scene();
+            var scene = Content.Load<Scene>("OffscreenScene");
 
-            AddSceneContent(scene);
+            //AddSceneContent(scene);
+            dirlight = scene.Entities.FirstOrDefault(e => e.Name == "Directional light");
 
             // Create SCenesystem
             var sceneSystem = new SceneSystem(Services)
@@ -35,20 +36,6 @@ namespace OffscreenRenderer
             offscreencompositor.Name = "OffscreenCompositor";
 
             sceneSystem.GraphicsCompositor = offscreencompositor;
-
-            // add Camera
-            var camEntity = new Entity();
-            var camComponent = new CameraComponent() { Slot = new SceneCameraSlotId(Guid.NewGuid()), Enabled = true };
-            camEntity.Add(camComponent);
-            scene.Entities.Add(camEntity);
-
-            // transform cam pos
-            camEntity.Transform.Position = new Vector3(0.0f, 0.0f, 5.0f);
-            var angle = (float)Math.PI / -2;
-            camEntity.Transform.Rotation = Quaternion.RotationZ(angle);
-
-            //Assign camera to CameraSlot
-            sceneSystem.GraphicsCompositor.Cameras[0].Id = camComponent.Slot.Id;
 
             // add scenesystem to Game, so it gets called
             Game.GameSystems.Add(sceneSystem);

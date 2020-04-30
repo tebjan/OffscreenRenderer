@@ -1,0 +1,113 @@
+!SceneAsset
+Id: a9c40aec-ca3e-41dd-b751-9a3afde686cd
+SerializedVersion: {Xenko: 3.1.0.1}
+Tags: []
+ChildrenIds: []
+Offset: {X: 0.0, Y: 0.0, Z: 0.0}
+Hierarchy:
+    RootParts:
+        - ref!! 27a1647f-a74a-4cca-bd7c-8f62a64ba58d
+        - ref!! 230fa26a-f881-4220-a977-27fb84e34702
+        - ref!! 9d5a66e3-1ab4-4fc0-bbed-a5ddc3b7d138
+        - ref!! 1ae35e11-8e46-468d-89af-1a2f0a79f0f4
+        - ref!! b09b0290-4f9e-468a-8f9a-520955b19ce3
+        - ref!! 2d0c8d57-3abe-4da9-8649-c715355deb1f
+    Parts:
+        -   Folder: null
+            Entity:
+                Id: 1ae35e11-8e46-468d-89af-1a2f0a79f0f4
+                Name: Capsule
+                Components:
+                    ba39ae68e321c130bd5de6ed11cbf005: !TransformComponent
+                        Id: fc585966-139b-4036-a498-7caac6072d19
+                        Position: {X: -2.78249216, Y: 0.0, Z: -1.41091788}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    91dd076efc34c319864b46160146a8f2: !ModelComponent
+                        Id: a230b479-4ce5-4b1d-a218-9058666db863
+                        Model: a6ca0c15-14eb-4cc6-90ed-7511c64da8ba:Capsule
+                        Materials: {}
+        -   Entity:
+                Id: 230fa26a-f881-4220-a977-27fb84e34702
+                Name: Capsule
+                Components:
+                    ba39ae68e321c130bd5de6ed11cbf005: !TransformComponent
+                        Id: c02320ac-e197-4c80-94ba-1902ab0b18c2
+                        Position: {X: -1.74645615, Y: 0.446760535, Z: -1.41091788}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    91dd076efc34c319864b46160146a8f2: !ModelComponent
+                        Id: ec78ff39-de12-408e-9086-5baac8aa5cda
+                        Model: a6ca0c15-14eb-4cc6-90ed-7511c64da8ba:Capsule
+                        Materials: {}
+        -   Entity:
+                Id: 27a1647f-a74a-4cca-bd7c-8f62a64ba58d
+                Name: Camera
+                Components:
+                    74518c088f210a7e6023f171aae38aa7: !TransformComponent
+                        Id: 437a2500-3c15-4dae-91cc-f4e8b9c50f61
+                        Position: {X: -1.76771688, Y: -0.008749729, Z: 2.20779538}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    00a33c1ebb7a56c57c731b5fe8da1a6a: !CameraComponent
+                        Id: 3262d501-a7c5-4461-ab3c-0a7f34aefeb5
+                        Name: null
+                        Projection: Perspective
+                        Slot: cea77efb-6c55-4170-8f23-9cc3b9bc933c
+        -   Entity:
+                Id: 2d0c8d57-3abe-4da9-8649-c715355deb1f
+                Name: Skybox light
+                Components:
+                    37f1eb897d70dd52d748839ee2c7a12e: !TransformComponent
+                        Id: 5641d88e-5db6-40b6-98f6-629d7f07bfe5
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    c03e93e9f6d0fe3d049debed4a495fee: !LightComponent
+                        Id: 269fdb11-f717-42ed-80d3-192067ecd486
+                        Type: !LightSkybox
+                            Skybox: 706efeb3-a605-44cd-aa6d-56459f7731bf:Skybox
+                    92862b66658134e3f5d3495ebdbdafe5: !BackgroundComponent
+                        Id: b85b3f94-93f9-4a2d-b9a7-0d09568ac6e2
+                        Enabled: false
+                        Texture: e3839f8e-70e9-4709-89c8-8f1f8879ceea:Skybox texture
+        -   Folder: null
+            Entity:
+                Id: 9d5a66e3-1ab4-4fc0-bbed-a5ddc3b7d138
+                Name: Capsule
+                Components:
+                    ba39ae68e321c130bd5de6ed11cbf005: !TransformComponent
+                        Id: b4ba728c-b4dd-4c87-bbf5-951111f1cefb
+                        Position: {X: -0.4250164, Y: 0.0, Z: -1.41091788}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    91dd076efc34c319864b46160146a8f2: !ModelComponent
+                        Id: 09ea102e-a807-4a2c-8e0c-0913d6261737
+                        Model: a6ca0c15-14eb-4cc6-90ed-7511c64da8ba:Capsule
+                        Materials: {}
+        -   Entity:
+                Id: b09b0290-4f9e-468a-8f9a-520955b19ce3
+                Name: Directional light
+                Components:
+                    b08962da5a1ee987fa37cb16cc989207: !TransformComponent
+                        Id: f9a56806-21f5-480e-b9b3-4c4460e93b7a
+                        Position: {X: 0.0, Y: 2.0, Z: 0.0}
+                        Rotation: {X: -0.57357645, Y: 0.0, Z: 0.0, W: 0.819152057}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    b942535d478d2132b526bae35c60fdb2: !LightComponent
+                        Id: 00a6e22c-8f5a-4d48-a733-3da90d84ffdf
+                        Type: !LightDirectional
+                            Color: !ColorRgbProvider
+                                Value: {R: 1.0, G: 1.0, B: 1.0}
+                            Shadow:
+                                Size: Large
+                                DepthRange: {}
+                                PartitionMode: !LightDirectionalShadowMap.PartitionLogarithmic {}
+                                ComputeTransmittance: false
+                                BiasParameters: {}
